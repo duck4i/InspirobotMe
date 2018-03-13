@@ -1,16 +1,11 @@
-# InspiroBot Me
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using System.Net;
+using System;
 
-Game development is hard as it is, some days you just need additional help. 
-
-This convenient plug-in adds new item to Unity's Help menu, tap on it and you will get random InspiroBot (TM) motivational. 
-
-![Alt text](inspirobot.png?raw=true "InspiroBot in practice")
-
-# Installation
-
-Unity package is generated and you can find it inside Release directory. Just double click on package and follow the steps in Unity.
-
-# Made for fun
+#if DOES_IT_INSPIROBOT_IT_DOES_INSPIROBOT
 
      .       .    )        .           .
    .       *             .         .
@@ -53,3 +48,37 @@ Unity package is generated and you can find it inside Release directory. Just do
 
   8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+#endif
+
+/// <summary>
+/// I'm InspiroBot.
+/// I am an artificial intelligence dedicated to generating unlimited amounts of unique inspirational quotes
+/// for endless enrichment of pointless human existence.
+/// </summary>
+public class InspirobotMe
+{
+
+    [MenuItem("Help/InspiroBot, make me laugh!")]
+    public static void PleaseHelpInspirobot()
+    {
+        string URL = "http://inspirobot.me/api?generate=true&oy=vey";
+
+        try
+        {
+            using (WebClient client = new WebClient())
+            {
+                string contentURL = client.DownloadString(URL);
+                if (string.IsNullOrEmpty(contentURL))
+                {
+                    throw new Exception("BLAAAH");
+                }
+                Application.OpenURL(contentURL);
+            }
+        }
+        catch (Exception e)
+        {
+            EditorUtility.DisplayDialog("Can't read InspiroBot API...", "So sad :( So sad :(", "Whatever.");
+        }
+    }
+
+}
