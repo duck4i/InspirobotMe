@@ -11,6 +11,7 @@ This convenient plug-in adds new item to Unity's Help menu, tap on it and you wi
 Unity package is generated and you can find it inside Release directory. Just double click on package and follow the steps in Unity.
 
 # Made for fun
+```
 
      .       .    )        .           .
    .       *             .         .
@@ -53,3 +54,4 @@ Unity package is generated and you can find it inside Release directory. Just do
 
   8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+```
